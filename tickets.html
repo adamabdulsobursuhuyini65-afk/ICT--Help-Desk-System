@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk Tickets</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>ICT Help Desk Tickets</h1>
+</header>
+
+<nav class="navbar">
+
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="assets.html">Assets</a>
+        <a href="tickets.html" class="active">Tickets</a>
+        <a href="maintenance.html">Maintenance</a>
+    </div>
+
+    <div id="datetime"></div>
+
+</nav>
+
+<div style="padding:20px;">
+
+    <h2>Create Ticket</h2>
+
+    <input type="text" id="staffName" placeholder="Staff Name">
+
+    <input type="text" id="problem" placeholder="Problem Description">
+
+    <select id="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+    </select>
+
+    <button onclick="addTicket()">Create Ticket</button>
+
+    <br><br>
+
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Staff Name</th>
+                <th>Problem</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="ticketTable"></tbody>
+    </table>
+
+</div>
+
+<footer>
+<p>Developed by Adam Abdul Sobur(Industrial Attachment Student)</p>
+</footer>
+
+<script src="js/tickets.js">
+    const themeToggle =
+document.getElementById("themeToggle");
+
+const body =
+document.body;
+
+let darkMode =
+localStorage.getItem("darkMode");
+
+if(darkMode === "enabled"){
+
+    body.classList.add("dark-mode");
+
+    themeToggle.src =
+    "images/sun.png";
+
+}
+
+themeToggle.addEventListener("click",()=>{
+
+    body.classList.toggle("dark-mode");
+
+    if(body.classList.contains("dark-mode")){
+
+        localStorage.setItem(
+            "darkMode",
+            "enabled"
+        );
+
+        themeToggle.src =
+        "images/sun.png";
+
+    }
+    else{
+
+        localStorage.setItem(
+            "darkMode",
+            "disabled"
+        );
+
+        themeToggle.src =
+        "images/moon.png";
+
+    }
+
+});
+</script>
+
+</body>
+</html>
