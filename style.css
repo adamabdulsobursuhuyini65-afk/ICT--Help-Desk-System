@@ -179,8 +179,7 @@ header{
 }
 
 .dashboard-page{
-    height: 100vh;
-    overflow: hidden;
+    min-height:100vh;
 }
 .logo-section{
     display:flex;
@@ -479,3 +478,172 @@ footer{
         overflow-x:auto;
     }
 }
+
+/*MOBILE RESPONSIVE DESIGN*/
+@media screen and (max-width:768px){
+    html,
+    body{
+        overflow-x:hidden;
+    }
+
+    /* Header */
+    .main-header{
+        padding:15px 10px;
+    }
+
+    .logo-section{
+        flex-direction:column;
+        text-align:center;
+        position:relative;
+    }
+
+    .logo{
+        width:60px;
+        height:60px;
+        margin-bottom:10px;
+    }
+
+    .header-text{
+        margin-left:0;
+    }
+
+    .header-text h1{
+        font-size:18px;
+        line-height:1.4;
+    }
+
+    .header-text p{
+        font-size:13px;
+    }
+
+    /* Theme & Hamburger */
+    .header-icons{
+        position:static;
+        margin-top:15px;
+        margin-left:0;
+        justify-content:center;
+        gap:12px;
+
+    }
+
+    .theme-btn,
+    .menu-btn{
+        width:42px;
+        height:42px;
+    }
+
+    /* Navigation */
+    .navbar{
+        justify-content:center;
+        text-align:center;
+        padding:10px;
+
+    }
+
+    .nav-links{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:5px;
+
+    }
+
+    .nav-links a{
+        margin:0;
+        padding:8px 10px;
+        font-size:14px;
+
+    }
+
+    #datetime{
+        margin-top:10px;
+        width:100%;
+        text-align:center;
+        font-size:12px;
+
+    }
+
+    /* Dashboard Cards */
+    .container{
+        flex-direction:column;
+        height:auto;
+        padding:20px 10px;
+        gap:15px;
+
+    }
+
+    .card{
+        width:95%;
+        min-height:140px;
+        padding:20px;
+
+    }
+
+    .card h2{
+        font-size:22px;
+    }
+
+    .card p{
+        font-size:40px;
+    }
+
+    /* Forms */
+    .content{
+        padding:15px;
+    }
+
+    input,
+    select,
+    textarea,
+    button{
+        width:100%;
+        font-size:16px;
+    }
+
+    .upload-container{
+        width:95%;
+        margin:20px auto;
+        padding:20px;
+
+    }
+
+    /* Tables */
+    .table-container{
+        overflow-x:auto;
+        width:100%;
+    }
+
+    table{
+        min-width:700px;
+
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu{
+        width:220px;
+        right:10px;
+        top:55px;
+
+    }
+
+    .dropdown-menu a{
+        font-size:14px;
+        padding:12px;
+
+    }
+
+    /* Footer */
+    footer{
+        padding:12px;
+        font-size:14px;
+
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+}
+
+
