@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Device Fault</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+
+        <div class="logo-section">
+
+            <img src="images/logo.jpeg"
+                 alt="Logo"
+                 class="logo">
+
+            <div class="header-text">
+                <h1>CSIR-Savannah Agricultural Research Institute</h1>
+                <p>ICT Help Desk & Asset Management System</p>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="assets.html">Assets</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="maintenance.html">Maintenance</a>
+        </div>
+
+        <div id="datetime"></div>
+
+    </nav>
+
+    <!-- Form Container -->
+    <div class="upload-container">
+
+        <h2>Device Fault Reporting Form</h2>
+
+        <form id="faultForm">
+
+            <input
+                type="text"
+                id="deviceName"
+                placeholder="Device Name"
+                required>
+
+            <input
+                type="text"
+                id="department"
+                placeholder="Department"
+                required>
+
+            <textarea
+                id="problemDescription"
+                rows="5"
+                placeholder="Describe the problem..."
+                required></textarea>
+
+            <label>Upload Image Evidence</label>
+
+            <input
+                type="file"
+                id="imageUpload"
+                accept="image/*">
+
+            <label>Upload Video Evidence</label>
+
+            <input
+                type="file"
+                id="videoUpload"
+                accept="video/*">
+
+            <button type="submit">
+                Submit Report
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
