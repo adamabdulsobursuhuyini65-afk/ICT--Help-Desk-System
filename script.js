@@ -159,17 +159,16 @@ link.click();
 
 
 /*MAINTENANCE*/
-let maintenance =
-JSON.parse(localStorage.getItem("maintenance")) || [];
-
 function displayMaintenance() {
 
     let table =
     document.getElementById("maintenanceTable");
 
+    if(!table) return;
+
     table.innerHTML = "";
 
-    maintenance.forEach((record, index) => {
+    maintenance.forEach((record,index)=>{
 
         table.innerHTML += `
         <tr>
@@ -177,7 +176,6 @@ function displayMaintenance() {
             <td>${record.fault}</td>
             <td>${record.action}</td>
             <td>${record.technician}</td>
-
             <td>
                 <button onclick="deleteMaintenance(${index})">
                     Delete
@@ -185,6 +183,7 @@ function displayMaintenance() {
             </td>
         </tr>
         `;
+
     });
 
     localStorage.setItem(
@@ -192,57 +191,6 @@ function displayMaintenance() {
         JSON.stringify(maintenance)
     );
 }
-
-function addMaintenance() {
-
-    let assetId =
-    document.getElementById("assetId").value;
-
-    let fault =
-    document.getElementById("fault").value;
-
-    let action =
-    document.getElementById("actionTaken").value;
-
-    let technician =
-    document.getElementById("technician").value;
-
-    if (
-        assetId === "" ||
-        fault === "" ||
-        action === "" ||
-        technician === ""
-    ) {
-        alert("Please fill all fields");
-        return;
-    }
-
-    maintenance.push({
-        assetId,
-        fault,
-        action,
-        technician
-    });
-
-    displayMaintenance();
-
-    document.getElementById("assetId").value = "";
-    document.getElementById("fault").value = "";
-    document.getElementById("actionTaken").value = "";
-    document.getElementById("technician").value = "";
-}
-
-function deleteMaintenance(index) {
-
-    maintenance.splice(index, 1);
-
-    displayMaintenance();
-}
-
-if(document.getElementById("maintenanceTable")){
-    displayMaintenance();
-}
-
 
 /*REPORTS*/
 const reports =
@@ -472,16 +420,16 @@ clearBtn.addEventListener("click", () => {
 
 
 /*TICKETS*/
-let tickets =
-JSON.parse(localStorage.getItem("tickets")) || [];
-
 function displayTickets() {
 
-    let table = document.getElementById("ticketTable");
+    let table =
+    document.getElementById("ticketTable");
+
+    if(!table) return;
 
     table.innerHTML = "";
 
-    tickets.forEach((ticket, index) => {
+    tickets.forEach((ticket,index)=>{
 
         table.innerHTML += `
         <tr>
@@ -490,71 +438,23 @@ function displayTickets() {
             <td>${ticket.priority}</td>
             <td>${ticket.status}</td>
             <td>
-    <button onclick="resolveTicket(${index})">
-        Resolve
-    </button>
+                <button onclick="resolveTicket(${index})">
+                    Resolve
+                </button>
 
-    <button onclick="deleteTicket(${index})">
-        Delete
-    </button>
-</td>
+                <button onclick="deleteTicket(${index})">
+                    Delete
+                </button>
+            </td>
         </tr>
         `;
+
     });
 
     localStorage.setItem(
         "tickets",
         JSON.stringify(tickets)
     );
-}
-
-function addTicket() {
-
-    let staff =
-    document.getElementById("staffName").value;
-
-    let problem =
-    document.getElementById("problem").value;
-
-    let priority =
-    document.getElementById("priority").value;
-
-    if (staff === "" || problem === "") {
-
-        alert("Please fill all fields");
-
-        return;
-    }
-
-    tickets.push({
-        staff,
-        problem,
-        priority,
-        status: "Open"
-    });
-
-    displayTickets();
-
-    document.getElementById("staffName").value = "";
-    document.getElementById("problem").value = "";
-}
-
-function deleteTicket(index) {
-
-    tickets.splice(index, 1);
-
-    displayTickets();
-}
-
-function resolveTicket(index){
-
-    tickets[index].status = "Resolved";
-
-    displayTickets();
-}
-
-if(document.getElementById("ticketTable")){
-    displayTickets();
 }
 
 /*UPLOAD*/
