@@ -247,28 +247,9 @@ JSON.parse(localStorage.getItem("reports")) || [];
 const reportTable =
 document.getElementById("reportTable");
 
-/*reports.forEach(report => {
-
-    reportTable.innerHTML += `
-
-    <tr>
-
-        <td>${report.device}</td>
-
-        <td>${report.department}</td>
-
-        <td>${report.description}</td>
-
-        <td>${report.date}</td>
-
-    </tr>
-
-    `;
-
-});*/
+if(reportTable){
 
 reports.forEach((report,index) => {
-
     reportTable.innerHTML += `
 
     <tr>
@@ -293,6 +274,8 @@ reports.forEach((report,index) => {
     `;
 
 });
+    
+}
 
 
 function viewEvidence(index){
@@ -447,135 +430,6 @@ function viewEvidence(index){
     `);
 
 }
-/*
-function viewEvidence(index){
-
-    const reports =
-    JSON.parse(
-        localStorage.getItem("reports")
-    );
-
-    const report =
-    reports[index];
-
-    let content = "";
-
-    if(report.image){
-
-        content = `
-        <img
-            src="${report.image}"
-            style="
-                max-width:90%;
-                max-height:80vh;
-            ">
-        `;
-    }
-
-    else if(report.video){
-
-        content = `
-        <video
-            controls
-            style="
-                max-width:90%;
-                max-height:80vh;
-            ">
-
-            <source
-                src="${report.video}">
-
-        </video>
-        `;
-    }
-
-    else{
-
-        alert("No evidence uploaded.");
-
-        return;
-    }
-
-    const newWindow =
-    window.open("");
-
-    newWindow.document.write(`
-
-    <html>
-
-    <head>
-        <title>Evidence</title>
-    </head>
-
-    <body
-        style="
-        text-align:center;
-        padding:20px;
-        ">
-
-        <h2>Uploaded Evidence</h2>
-
-        ${content}
-
-    </body>
-
-    </html>
-
-    `);
-
-}*/
-/*
-function viewEvidence(index){
-
-    const reports =
-    JSON.parse(
-        localStorage.getItem("reports")
-    );
-
-    const report =
-    reports[index];
-
-    if(!report.image){
-
-        alert("No evidence uploaded.");
-
-        return;
-    }
-
-    const newWindow =
-    window.open("");
-
-    newWindow.document.write(`
-
-    <html>
-
-    <head>
-
-    <title>Evidence</title>
-
-    </head>
-
-    <body style="
-        text-align:center;
-        padding:20px;
-    ">
-
-    <h2>Uploaded Evidence</h2>
-
-    <img
-    src="${report.image}"
-    style="
-        max-width:90%;
-        max-height:80vh;
-    ">
-
-    </body>
-
-    </html>
-
-    `);
-
-}*/
 
 function deleteReport(index){
 
@@ -589,11 +443,12 @@ function deleteReport(index){
     location.reload();
 
 }
+const clearBtn =
+document.getElementById("clearReportsBtn");
 
-document
-.getElementById("clearReportsBtn")
-.addEventListener("click", () => {
+if(clearBtn){
 
+clearBtn.addEventListener("click", () => {
     const confirmDelete =
     confirm(
         "Are you sure you want to clear all reports?"
@@ -608,6 +463,8 @@ document
     }
 
 });
+    
+}
 
 
 /*TICKETS*/
@@ -696,55 +553,12 @@ displayTickets();
 
 
 /*UPLOAD*/
-/*document
-.getElementById("faultForm")
-.addEventListener("submit", function(e){
+const faultForm =
+document.getElementById("faultForm");
 
-    e.preventDefault();
+if(faultForm){
 
-    const device =
-    document.getElementById("deviceName").value;
-
-    const department =
-    document.getElementById("department").value;
-
-    const description =
-    document.getElementById("problemDescription").value;
-
-    let reports =
-    JSON.parse(
-        localStorage.getItem("reports")
-    ) || [];
-
-    reports.push({
-
-        device,
-        department,
-        description,
-        date:
-        new Date().toLocaleString()
-
-    });
-
-    localStorage.setItem(
-        "reports",
-        JSON.stringify(reports)
-    );
-
-    alert(
-        "Fault Report Submitted Successfully!"
-    );
-
-    document
-    .getElementById("faultForm")
-    .reset();
-
-});*/
-
-
-
-document.getElementById("faultForm")
-.addEventListener("submit", function(e){
+faultForm.addEventListener("submit", function(e){
 
     e.preventDefault();
 
@@ -814,3 +628,4 @@ document.getElementById("faultForm")
     }
 
 });
+}
