@@ -79,7 +79,9 @@ assets.splice(index,1);
 displayAssets();
 }
 
-displayAssets();
+if(document.getElementById("assetTable")){
+    displayAssets();
+}
 
 function editAsset(index){
 
@@ -237,7 +239,9 @@ function deleteMaintenance(index) {
     displayMaintenance();
 }
 
-displayMaintenance();
+if(document.getElementById("maintenanceTable")){
+    displayMaintenance();
+}
 
 
 /*REPORTS*/
@@ -549,8 +553,9 @@ function resolveTicket(index){
     displayTickets();
 }
 
-displayTickets();
-
+if(document.getElementById("ticketTable")){
+    displayTickets();
+}
 
 /*UPLOAD*/
 const faultForm =
@@ -577,26 +582,10 @@ faultForm.addEventListener("submit", function(e){
     const videoFile =
     document.getElementById("videoUpload").files[0];
 
-    if(imageFile){
+    let imageData = null;
+    let videoData = null;
 
-        const reader =
-        new FileReader();
-
-        reader.onload = function(){
-
-            saveReport(reader.result);
-
-        };
-
-        reader.readAsDataURL(imageFile);
-
-    }else{
-
-        saveReport(null);
-
-    }
-
-    function saveReport(imageData){
+    function saveReport(){
 
         let reports =
         JSON.parse(
@@ -627,5 +616,63 @@ faultForm.addEventListener("submit", function(e){
 
     }
 
+    if(imageFile){
+
+        const imageReader =
+        new FileReader();
+
+        imageReader.onload = function(){
+
+            imageData = imageReader.result;
+
+            if(videoFile){
+
+                const videoReader =
+                new FileReader();
+
+                videoReader.onload = function(){
+
+                    videoData = videoReader.result;
+
+                    saveReport();
+
+                };
+
+                videoReader.readAsDataURL(videoFile);
+
+            }else{
+
+                saveReport();
+
+            }
+
+        };
+
+        imageReader.readAsDataURL(imageFile);
+
+    }else if(videoFile){
+
+        const videoReader =
+        new FileReader();
+
+        videoReader.onload = function(){
+
+            videoData = videoReader.result;
+
+            saveReport();
+
+        };
+
+        videoReader.readAsDataURL(videoFile);
+
+    }else{
+
+        saveReport();
+
+    }
+
+});
+
+}
 });
 }
