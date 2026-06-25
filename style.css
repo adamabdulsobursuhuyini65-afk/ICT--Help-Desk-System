@@ -52,6 +52,10 @@ header{
     transition:.3s;
 }
 
+ .nav-links{
+        display:flex;
+ }
+
 .nav-links a:hover{
     background:#006400;
 }
@@ -62,20 +66,7 @@ header{
     gap:15px;
 }
 
-/*.theme-icon{
-    width:32px;
-    height:32px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.theme-icon:hover{
-    transform:rotate(20deg) scale(1.1);
-    background: white;
-}*/
-
 .dark-mode{
-
     color:white;
 
 }
@@ -138,14 +129,12 @@ header{
 }
 
 .dark-mode td{
-
     color:white;
 
 }
 
 .dark-mode input,
 .dark-mode select{
-
     background:#333;
     color:white;
     border:1px solid #555;
@@ -153,10 +142,8 @@ header{
 }
 
 .dark-mode .content{
-
     background:rgba(30,30,30,0.95);
     color:white;
-
 }
 
 #datetime{
@@ -202,19 +189,13 @@ header{
 .menu-btn{
     width:45px;
     height:45px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     border-radius:50%;
-
     background:rgba(255,255,255,0.15);
-
     backdrop-filter:blur(5px);
-
     cursor:pointer;
-
     transition:all 0.3s ease;
     position: relative;
 }
@@ -398,62 +379,40 @@ footer{
 }
 
 .upload-container{
-
     max-width:700px;
-
     margin:40px auto;
-
     padding:30px;
-
     background:rgba(255,255,255,0.95);
-
     border-radius:15px;
-
     box-shadow:0 4px 15px rgba(0,0,0,0.2);
 
 }
 
 .upload-container h2{
-
     text-align:center;
-
     margin-bottom:20px;
-
     color:#006400;
 
 }
 
 .upload-container input,
 .upload-container textarea{
-
     width:100%;
-
     padding:12px;
-
     margin-bottom:15px;
-
     border:1px solid #ccc;
-
     border-radius:8px;
-
     box-sizing:border-box;
 
 }
 
 .upload-container button{
-
     background:#006400;
-
     color:white;
-
     border:none;
-
     padding:12px 25px;
-
     border-radius:8px;
-
     cursor:pointer;
-
     font-size:16px;
 
 }
@@ -462,22 +421,6 @@ footer{
     background:#008000;
 }
 
-@media(max-width:768px){
-
-    .container{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .card{
-        width:90%;
-    }
-
-    table{
-        display:block;
-        overflow-x:auto;
-    }
-}
 
 /*MOBILE RESPONSIVE DESIGN*/
 @media screen and (max-width:768px){
@@ -524,7 +467,6 @@ footer{
     margin:0;
     display:flex;
     gap:12px;
-        
     }
 
     .theme-btn,
