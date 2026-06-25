@@ -262,7 +262,7 @@ header{
     border-bottom:10px solid white;
 }
 
-.theme-btn:hover
+.theme-btn:hover,
 .menu-btn:hover{
     background:rgba(255,255,255,0.3);
     transform:translateY(-2px);
