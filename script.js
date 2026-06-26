@@ -520,6 +520,7 @@ function viewEvidence(index){
 displayReports();
 
 /*UPLOAD*/
+
 const faultForm =
 document.getElementById("faultForm");
 
@@ -625,7 +626,3 @@ faultForm.addEventListener("submit",function(e){
 });
 
 }
-
-
-
-
