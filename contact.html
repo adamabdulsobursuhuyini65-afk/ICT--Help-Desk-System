@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact ICT Staff</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+
+    <div class="logo-section">
+
+        <img src="images/logo.jpeg" class="logo" alt="Logo">
+
+        <div class="header-text">
+            <h1>CSIR-Savannah Agricultural Research Institute</h1>
+            <p>ICT Help Desk & Asset Management System</p>
+        </div>
+
+    </div>
+
+</header>
+
+<nav class="navbar">
+
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="assets.html">Assets</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="maintenance.html">Maintenance</a>
+        <a href="reports.html">Reports</a>
+        <a href="contact.html" class="active">Contact</a>
+    </div>
+
+    <div id="datetime"></div>
+
+</nav>
+
+<div class="content">
+
+    <h2>ICT Staff Directory</h2>
+    <p>Contact details of all ICT staff members at CSIR-SARI.</p>
+
+    <!-- CARDS CONTAINER -->
+    <div class="contact-container">
+
+        <!-- CARD 1 -->
+        <div class="contact-card">
+            <img src="images/logo.jpeg" class="card-logo">
+
+            <h3>Head of ICT Department</h3>
+            <p><strong>Name:</strong> Mr. John Doe</p>
+            <p><strong>Phone:</strong> +233 24 000 0001</p>
+            <p><strong>Email:</strong> john.doe@sari.org.gh</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="contact-card">
+            <img src="images/logo.jpeg" class="card-logo">
+
+            <h3>Systems Administrator</h3>
+            <p><strong>Name:</strong> Mr. Richard Adams</p>
+            <p><strong>Phone:</strong> +233 24 000 0002</p>
+            <p><strong>Email:</strong> richard.adams@sari.org.gh</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="contact-card">
+            <img src="images/logo.jpeg" class="card-logo">
+
+            <h3>Network Administrator</h3>
+            <p><strong>Name:</strong> Mrs. Linda Mensah</p>
+            <p><strong>Phone:</strong> +233 24 000 0003</p>
+            <p><strong>Email:</strong> linda.mensah@sari.org.gh</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="contact-card">
+            <img src="images/logo.jpeg" class="card-logo">
+
+            <h3>ICT Support Officer</h3>
+            <p><strong>Name:</strong> Mr. Musah Iddi</p>
+            <p><strong>Phone:</strong> +233 24 000 0004</p>
+            <p><strong>Email:</strong> musah.iddi@sari.org.gh</p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="contact-card">
+            <img src="images/logo.jpeg" class="card-logo">
+
+            <h3>ICT Technician</h3>
+            <p><strong>Name:</strong> Mr. Daniel Yakubu</p>
+            <p><strong>Phone:</strong> +233 24 000 0005</p>
+            <p><strong>Email:</strong> daniel.yakubu@sari.org.gh</p>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="contact-card">
+            <img src="images/logo.jpeg" class="card-logo">
+
+            <h3>IT Assistant</h3>
+            <p><strong>Name:</strong> Miss Fatima Issah</p>
+            <p><strong>Phone:</strong> +233 24 000 0006</p>
+            <p><strong>Email:</strong> fatima.issah@sari.org.gh</p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>Developed by Adam Abdul Sobur (Industrial Attachment Student)</p>
+</footer>
+
+<script>
+function updateTime(){
+    const dt = document.getElementById("datetime");
+    if(dt){
+        dt.innerHTML = new Date().toLocaleString();
+    }
+}
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html>
