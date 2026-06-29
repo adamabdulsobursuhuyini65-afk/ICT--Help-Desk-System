@@ -598,7 +598,9 @@ footer{
     }
 
 .table-container table{
-    min-width:650px;
+    width: 100%;
+    min-width:700px;
+    border-collapse: collapse
         
     }
 
