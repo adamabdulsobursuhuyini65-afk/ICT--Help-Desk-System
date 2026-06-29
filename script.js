@@ -519,6 +519,34 @@ function viewEvidence(index){
 }
 displayReports();
 
+/* CLEAR ALL REPORTS */
+
+const clearBtn =
+document.getElementById("clearReportsBtn");
+
+if(clearBtn){
+
+    clearBtn.addEventListener("click", function(){
+
+        const confirmDelete =
+        confirm("Are you sure you want to clear all reports?");
+
+        if(confirmDelete){
+
+            reports = [];
+
+            localStorage.removeItem("reports");
+
+            displayReports();
+
+            alert("All reports have been deleted.");
+
+        }
+
+    });
+
+}
+
 /*UPLOAD*/
 
 const faultForm =
