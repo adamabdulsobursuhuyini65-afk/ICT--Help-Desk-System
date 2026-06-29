@@ -578,9 +578,6 @@ faultForm.addEventListener("submit",function(e){
 
     function saveReport(){
 
-        let reports =
-        JSON.parse(localStorage.getItem("reports")) || [];
-
         reports.push({
 
             device: device,
